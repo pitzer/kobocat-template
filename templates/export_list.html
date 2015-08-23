@@ -73,6 +73,8 @@
             <input type="checkbox" name="options[export_xlsform]" checked="yes" />
             {% trans "Export the XLSForm along with the survey data." %}
           </label>
+          <label>{% trans "Export template URL." %}</label>
+          <input type="text" name="options[export_template_url]" />
           {% endif %}
         </div>
         {% endif %}
@@ -150,7 +152,8 @@
 <script type="text/javascript" src="{{STATIC_URL}}js/form_actions.js"></script>
 <script type="text/javascript" charset="utf-8" src="{{STATIC_URL}}js/underscore-min.js"></script>
 <script type="text/javascript" charset="utf-8" src="{{STATIC_URL}}js/export_list.js"></script>
+  
 <script type="text/javascript">
     var progress_url = '{% url "onadata.apps.viewer.views.export_progress" username xform.id_string export_type %}';
-</script>
+</script> 
 {% endblock %}
